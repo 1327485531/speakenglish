@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="60" fill="#1a1a2e"/>
+  <text x="140" y="200" font-family="serif" font-size="80" fill="white" font-weight="bold">英</text>
+  <text x="232" y="200" font-family="serif" font-size="80" fill="#e94560" font-weight="bold">语</text>
+  <text x="140" y="320" font-family="serif" font-size="80" fill="white" font-weight="bold">口</text>
+  <text x="232" y="320" font-family="serif" font-size="80" fill="white" font-weight="bold">语</text>
+  <path d="M80 380 Q256 480 432 380" stroke="#e94560" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="256" cy="410" r="20" fill="#e94560"/>
+</svg>
