@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1040">
+  <meta name="description" content="英语口语提词器 — 看拼音/汉字念英文，零基础也能开口说">
+  <title>英语口语提词器</title>
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="app">
+    <!-- 头部 -->
+    <header class="app-header">
+      <h1 class="app-title">英语口语提词器</h1>
+      <p class="app-subtitle">看拼音/汉字，念英文句子</p>
+    </header>
+
+    <!-- 输入区 -->
+    <section class="input-section">
+      <textarea
+        id="text-input"
+        class="text-input"
+        placeholder="请输入英文单词或句子&#10;例如：situation&#10;或：Where is the toilet?"
+        rows="3"
+        autofocus
+      ></textarea>
+      <div class="quick-select">
+        <div class="qs-section">
+          <div class="qs-header">
+            <span class="qs-label">常用词</span>
+            <button class="qs-random" data-target="word">随机</button>
+          </div>
+          <div id="qs-words" class="qs-tags"></div>
+        </div>
+        <div class="qs-section">
+          <div class="qs-header">
+            <span class="qs-label">常用句</span>
+            <button class="qs-random" data-target="sentence">随机</button>
+          </div>
+          <div id="qs-sentences" class="qs-tags"></div>
+        </div>
+      </div>
+      <div class="input-actions">
+        <button id="generate-btn" class="btn btn-primary">生成注音</button>
+        <span id="status" class="status">就绪，请输入英文</span>
+      </div>
+    </section>
+
+    <!-- 注音显示区 -->
+    <section class="score-section">
+      <div class="score-controls">
+        <!-- 模式切换 -->
+        <label class="toggle-container">
+          <span class="toggle-label">汉字模式</span>
+          <input type="checkbox" id="mode-toggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div id="hint-area" class="hint-area">
+        <div class="score-empty">请输入英文单词或句子</div>
+      </div>
+    </section>
+
+    <!-- 播放控制区 -->
+    <section class="play-section">
+      <div class="play-controls">
+        <button id="play-btn" class="btn btn-play" disabled>▶ 播放</button>
+        <div class="rate-control">
+          <label for="rate-slider" class="rate-label">语速</label>
+          <div class="rate-slider-container">
+            <span class="rate-min">慢</span>
+            <input
+              type="range"
+              id="rate-slider"
+              class="rate-slider"
+              min="0.3"
+              max="1.2"
+              step="0.1"
+              value="0.8"
+            >
+            <span class="rate-max">快</span>
+          </div>
+          <span id="rate-value" class="rate-value">0.8x</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 使用提示 -->
+    <section class="tips-section">
+      <details>
+        <summary>使用说明</summary>
+        <ul>
+          <li><strong>单词模式</strong>：输入一个单词，查看音节拆分和注音</li>
+          <li><strong>句子模式</strong>：输入完整句子，自动标注连读、弱读和语调</li>
+          <li>点击 <strong>拼音/汉字</strong> 切换开关切换注音显示模式</li>
+          <li>调整 <strong>语速</strong> 滑块控制朗读速度（0.3x~1.2x）</li>
+          <li>本工具适合零基础用户跟读模仿，<strong>看着汉字念英文</strong></li>
+        </ul>
+      </details>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/tts.js"></script>
+  <script src="js/word.js"></script>
+  <script src="js/sentence.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
