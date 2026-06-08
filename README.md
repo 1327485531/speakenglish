@@ -25,7 +25,7 @@
 
 
 ## 🏗 项目架构
-'''
+```
 源码结构：
 │ index.html        # 主页面
 │ manifest.json     # PWA
@@ -42,7 +42,7 @@
 │   ├── ipa_help.json       # 44 个 IPA 符号配字
 │   └── linking_rules.json  # 270+ 条连读规则
 └── tools/         # 数据生成脚本
-'''
+```
 ## 🔧 技术栈
 
 - 纯前端（HTML + CSS + JS），零依赖构建
